@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoomFactory", "RoomFactory\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoomFactoryTest", "RoomFactoryTest\RoomFactoryTest.csproj", "{E48BB955-F096-4891-A0FE-D28ABA656225}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cinema", "Cinema\Cinema.csproj", "{27499EA7-A377-44D1-AD0A-C966A180A8AF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{E48BB955-F096-4891-A0FE-D28ABA656225}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E48BB955-F096-4891-A0FE-D28ABA656225}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E48BB955-F096-4891-A0FE-D28ABA656225}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27499EA7-A377-44D1-AD0A-C966A180A8AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27499EA7-A377-44D1-AD0A-C966A180A8AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27499EA7-A377-44D1-AD0A-C966A180A8AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27499EA7-A377-44D1-AD0A-C966A180A8AF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
