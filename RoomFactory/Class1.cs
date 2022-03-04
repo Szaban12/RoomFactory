@@ -47,7 +47,7 @@ namespace RoomFactory
     }
     public class RoomCreator
     {
-        public static char[,] CreateRoom(string RoomId,IDataReader dataSource)
+        public char[,] CreateRoom(string RoomId,IDataReader dataSource)
         {
             Room r = dataSource.getRooms().Find(room => RoomId == room.Id);
             char[,] cin = new char[r.Width, r.Height];

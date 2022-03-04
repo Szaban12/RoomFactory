@@ -50,5 +50,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RoomFactory\RoomFactory.csproj">
+      <Project>{5697ca44-8d43-4114-8f56-075276079682}</Project>
+      <Name>RoomFactory</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
