@@ -6,6 +6,28 @@ using System.Threading.Tasks;
 
 namespace Cinema
 {
+    public static class Statisztika
+    {
+        public static List<String> list;
+        static Statisztika()
+        {
+            list = new List<string>();
+        }
+        public static void Stat_calc()
+        {
+            foreach (var line in list.GroupBy(info => info)
+                .Select(group => new
+                {
+                    metric=group.Key,
+                    Count=group.Count()
+                })
+                .OrderBy(x=> x.metric)
+                )
+            {
+                Console.WriteLine("hely {}: {1}db",line.metric,line.Count);
+            }
+        }
+    }
     class CinemaVisitor
     {
         public  int TX { get; set; }
@@ -25,6 +47,10 @@ namespace Cinema
             AX = aX;
             AY = aY;
             VType = vType;
+            if (VType==VisitorType.In)
+            {
+                Statisztika.list.Add(String.Concat(TY.ToString(),' ',TX.ToString()));
+            }
         }
 
         public void Draw()
