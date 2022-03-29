@@ -6,16 +6,31 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 
 namespace RoomFactory
-{
+{   
+    /// <summary>
+    /// This is the room class, it contains a string for an id and width and height as integers.
+    /// </summary>
     public class Room
     {
+        ///text Id string of a room
         public string Id { get; set; }
+        ///text Width of a room as integer
         public int Width { get; set; }
+        ///text Height of a room as integer
         public int Height { get; set; }
+        /// <summary>
+        /// Empty constructor
+        /// </summary>
         public Room()
         {
 
         }
+        /// <summary>
+        ///  Constructor with params for Room class
+        /// </summary>
+        /// <param name="_id"></param>
+        /// <param name="_width"></param>
+        /// <param name="_height"></param>
         public Room(string _id, int _width, int _height)
         {
             this.Id = _id;
@@ -29,6 +44,10 @@ namespace RoomFactory
     }
     public class DataReader:IDataReader
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>List of Rooms</returns>
         public List<Room> getRooms()
         {
             List<Room> rooms = new List<Room>();
