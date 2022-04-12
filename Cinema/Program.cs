@@ -9,8 +9,15 @@ using RoomFactory;
 
 namespace Cinema
 {
+    /// <summary>
+    /// Class of main
+    /// </summary>
     class Program
     {
+        /// <summary>
+        /// Drawing the cinema onscreen
+        /// </summary>
+        /// <param name="c"></param>
         public static void Draw(char[,] c)
         {
             Console.CursorVisible = false;
@@ -24,9 +31,20 @@ namespace Cinema
                 Console.Write(" ");
             }
         }
+        /// <summary>
+        /// Object used for locking.
+        /// </summary>
         public static object Lockobject = new object();
+        /// <summary>
+        /// Cinema matrix.
+        /// </summary>
         public static char[,] cinema;
         public static List<CinemaVisitor> visitorlist;
+        /// <summary>
+        /// Timing
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="e"></param>
         private static void OnTimedEvent(object source, ElapsedEventArgs e)
         {
             Draw(cinema);
@@ -38,6 +56,10 @@ namespace Cinema
             }
 
         }
+        /// <summary>
+        /// Main Program
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
             visitorlist = new List<CinemaVisitor>();
@@ -102,6 +124,11 @@ namespace Cinema
             Statisztika.Stat_calc();
             Console.ReadLine();
         }
+        /// <summary>
+        /// Function to cancel visitors task on cancellationtoken
+        /// </summary>
+        /// <param name="cv"></param>
+        /// <param name="ct"></param>
         public static void VisitorTask(CinemaVisitor cv,CancellationToken ct)
         {
             while (cv!=null)
@@ -114,6 +141,12 @@ namespace Cinema
                 System.Threading.Thread.Sleep(1000);
             }
         }
+        /// <summary>
+        /// Creating a cancellable task
+        /// </summary>
+        /// <param name="cv"></param>
+        /// <param name="ct"></param>
+        /// <returns></returns>
         public static Task CancellableTask(CinemaVisitor cv, CancellationToken ct)
         {
             return Task.Factory.StartNew(() => VisitorTask(cv, ct), ct);
